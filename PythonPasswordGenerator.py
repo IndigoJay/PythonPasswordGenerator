@@ -12,4 +12,10 @@ def generate_password(numchar=8):
 				and any([ch in string.punctuation for ch in password])):
 			return(password)
 
-generate_password(15)
+new_pw = generate_password(15)
+new_pw
+
+import bcrypt
+enc_pw = bcrypt.hashpw(new_pw.encode(), bcrypt.gensalt())
+enc_pw
+
